@@ -1,0 +1,125 @@
+package bank_management;
+
+import javax.swing.*;
+import java.awt.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class accountDetails extends JFrame  {
+    String bal;
+
+    accountDetails(String AccountNumber,String name ,String fname,String dob,String gender,String email,String marritalstatus,String city,String state,String pincode,String pan,String aadhar,String facility) throws SQLException {
+        setTitle("Account Details");
+        setLayout(null);
+
+        Conn connn = new Conn();
+        ResultSet arss = connn.s.executeQuery("select * from balance where  AccountNumber = '" + AccountNumber + "'");
+        while (arss.next()) {
+            bal = arss.getString("balance");
+
+        }
+
+        JLabel text = new JLabel("Account Deatils");
+        text.setFont(new Font("Osword", Font.BOLD, 25)); 
+        text.setBounds(150, 20, 200, 50);
+        add(text);
+
+        JLabel balance = new JLabel("Balance: " + bal+" Rs.");
+        balance.setFont(new Font("Osword", Font.BOLD, 18)); 
+        balance.setBounds(170, 50, 200, 50);
+        add(balance);
+
+        JLabel accountNo = new JLabel("AccountNumber:   " + AccountNumber);
+        accountNo.setFont(new Font("Osword", Font.BOLD, 15));
+        accountNo.setBounds(30, 100, 400, 50);
+        add(accountNo);
+
+        JLabel dname = new JLabel("Name:                       " + name);
+        dname.setFont(new Font("Osword", Font.BOLD, 15));
+        dname.setBounds(30, 120, 400, 50);
+        add(dname);
+
+        JLabel dfname = new JLabel("Father Name:          " + fname);
+        dfname.setFont(new Font("Osword", Font.BOLD, 15));
+        dfname.setBounds(30, 140, 400, 50);
+        add(dfname);
+
+        JLabel ddob = new JLabel("DOB:                         " + dob);
+        ddob.setFont(new Font("Osword", Font.BOLD, 15));
+        ddob.setBounds(30, 160, 400, 50);
+        add(ddob);
+
+        JLabel dgender = new JLabel("Gender:                    " + gender);
+        dgender.setFont(new Font("Osword", Font.BOLD, 15));
+        dgender.setBounds(30, 180, 400, 50);
+        add(dgender);
+
+        JLabel demail = new JLabel("Email:                        " + email);
+        demail.setFont(new Font("Osword", Font.BOLD, 15));
+        demail.setBounds(30, 200, 400, 50);
+        add(demail);
+
+        JLabel dmarritalstatus = new JLabel("Marrital Status:       " + marritalstatus);
+        dmarritalstatus.setFont(new Font("Osword", Font.BOLD, 15));
+        dmarritalstatus.setBounds(30, 220, 400, 50);
+        add(dmarritalstatus);
+
+        JLabel dpan = new JLabel("PAN Number:           " + pan);
+        dpan.setFont(new Font("Osword", Font.BOLD, 15));
+        dpan.setBounds(30, 240, 400, 50);
+        add(dpan);
+        
+        
+        JLabel daadhar = new JLabel("Aadhar Number:     " + aadhar);
+        daadhar.setFont(new Font("Osword", Font.BOLD, 15));
+        daadhar.setBounds(30, 260, 400, 50);
+        add(daadhar);
+        
+        JLabel dpincode = new JLabel("PinCode:                  " + pincode);
+        dpincode.setFont(new Font("Osword", Font.BOLD, 15));
+        dpincode.setBounds(30, 280, 400, 50);
+        add(dpincode);
+        
+        JLabel dcity = new JLabel("City:                           " + city);
+        dcity.setFont(new Font("Osword", Font.BOLD, 15));
+        dcity.setBounds(30, 300, 400, 50);
+        add(dcity);
+        
+        JLabel dstate = new JLabel("State:                         " + state);
+        dstate.setFont(new Font("Osword", Font.BOLD, 15));
+        dstate.setBounds(30, 320, 400, 50);
+        add(dstate);
+        
+        JLabel fac = new JLabel("Services👇:");
+        fac.setFont(new Font("Osword", Font.BOLD, 15));
+        fac.setBounds(30, 340, 400, 50);
+        add(fac);
+        
+        JLabel fac1 = new JLabel(facility);
+        fac1.setFont(new Font("Osword", Font.BOLD, 10));
+        fac1.setBounds(30, 380, 500, 50);
+        add(fac1);
+        
+        JLabel profile = new JLabel("Profile Photo😎");
+        profile.setFont(new Font("Osword", Font.BOLD, 15));
+        profile.setBounds(350, 100, 150, 50);
+        add(profile);
+        
+        JLabel sig = new JLabel("Signature 🔻");
+        sig.setFont(new Font("Osword", Font.BOLD, 15));
+        sig.setBounds(350, 280, 150, 50);
+        add(sig);
+
+        setSize(550, 500);
+        setVisible(true);
+        setLocation(500, 150);
+        getContentPane().setBackground(Color.white);
+    }
+
+
+
+    public static void main(String[] args) throws SQLException {
+        new accountDetails("","","","","","","","","","","","","");
+    }
+
+}
