@@ -17,11 +17,7 @@ Enter username and password and login
 Main page
 ![image](https://github.com/ajayvijay9929/Banking_System/assets/120326151/56a89a97-0e62-49a1-91a8-10db7e098ca6)
 
-This is Account Details page  *You will be required to enter your password before viewing your account details.
-![image](https://github.com/ajayvijay9929/Banking_System/assets/120326151/0c0f523e-943a-47a9-8537-2db3d8ac8d2e)
 
-This is ATM Card (click on View ATM Card)
-![image](https://github.com/ajayvijay9929/Banking_System/assets/120326151/7a426fc2-f75c-45bf-ad11-8e8d212dbf76)
 
 This is Pin Change Page 
 ![image](https://github.com/ajayvijay9929/Banking_System/assets/120326151/2faa08af-cec3-405e-bb4f-92d5e67e250d)
